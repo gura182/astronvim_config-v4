@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -15,7 +15,7 @@ return {
       large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+      diagnostics_mode = 2, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
       highlighturl = true, -- highlight URLs at start
       notifications = true, -- enable notifications at start
     },
@@ -32,6 +32,8 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        scrolloff = 5, -- number of lines to keep above and below the cursor
+        listchars = { eol = '⮒', tab = '↦ ', trail = '~', extends = '>', precedes = '<', space = '·' },
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -47,18 +49,18 @@ return {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        -- ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        -- ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
-        ["<Leader>bd"] = {
-          function()
-            require("astroui.status.heirline").buffer_picker(
-              function(bufnr) require("astrocore.buffer").close(bufnr) end
-            )
-          end,
-          desc = "Close buffer from tabline",
-        },
+        -- ["<Leader>bd"] = {
+        --   function()
+        --     require("astroui.status.heirline").buffer_picker(
+        --       function(bufnr) require("astrocore.buffer").close(bufnr) end
+        --     )
+        --   end,
+        --   desc = "Close buffer from tabline",
+        -- },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
@@ -66,6 +68,32 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+
+        -- navigate buffer tabs
+        ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        -- speed up motion
+        ["J"] = { "3j", desc = "Move down 3 lines" },
+        ["K"] = { "3k", desc = "Move up 3 lines" },
+        -- join lines
+        ["<C-N>"] = { "<cmd>join<cr>", desc = "Join lines" },
+        -- move lines up/down
+        ["<A-j>"] = { ":m .+1<CR>==", desc = "Move lines down" },
+        ["<A-k>"] = { ":m .-2<CR>==" , desc = "Move lines up" },
+        -- show white spaces
+        ["<leader>u-"] = { "<cmd>IBLDisable<cr><cmd>set list!<cr>", desc = "Toggle show whitespaces" },
+        -- append semicolon
+        ["<leader>;"] = { "g_a;<esc>", desc = "Append semicolon" },
+      },
+      i = {
+        ["<C-s>"] = { "<esc><cmd>w<cr>", desc = "Save" },
+      },
+      v = {
+        ["<C-s>"] = { "<esc><cmd>w<cr>", desc = "Save" },
+        ["p"] = { "pgvy" },
+        -- TODO: move lines up/down
+        -- ["<A-j>"] = { ":m '>+1<CR>gv=gv", desc = "Move lines down" },
+        -- ["<A-k>"] = { ":m '<-2<CR>gv=gv" , desc = "Move lines up" },
       },
     },
   },
