@@ -8,6 +8,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.cpp" },
   -- { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   -- import/override with your plugins folder

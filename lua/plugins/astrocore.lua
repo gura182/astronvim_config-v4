@@ -34,6 +34,7 @@ return {
         wrap = false, -- sets vim.opt.wrap
         scrolloff = 5, -- number of lines to keep above and below the cursor
         listchars = { eol = '⮒', tab = '↦ ', trail = '~', extends = '>', precedes = '<', space = '·' },
+        guicursor = "n-v-c-sm:block,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20"
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -81,7 +82,8 @@ return {
         ["<A-j>"] = { ":m .+1<CR>==", desc = "Move lines down" },
         ["<A-k>"] = { ":m .-2<CR>==" , desc = "Move lines up" },
         -- show white spaces
-        ["<leader>u-"] = { "<cmd>IBLDisable<cr><cmd>set list!<cr>", desc = "Toggle show whitespaces" },
+        -- ["<leader>u-"] = { "<cmd>IBLDisable<cr><cmd>set list!<cr>", desc = "Toggle show whitespaces" },
+        ["<leader>u-"] = { "<cmd>set list!<cr>", desc = "Toggle show whitespaces" },
         -- append semicolon
         ["<leader>;"] = { "g_a;<esc>", desc = "Append semicolon" },
       },

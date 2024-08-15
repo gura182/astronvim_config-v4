@@ -36,7 +36,7 @@ return {
           hl.git_branch_bg = cursorline_bg
           hl.git_diff_bg = cursorline_bg
           hl.blank_bg = get_hlgroup("Folded").fg
-          hl.file_info_bg = get_hlgroup("Visual").bg
+          hl.file_info_bg = "#444454"
           hl.nav_icon_bg = get_hlgroup("String").fg
           hl.nav_fg = hl.nav_icon_bg
           hl.folder_icon_bg = get_hlgroup("DiffDelete").fg

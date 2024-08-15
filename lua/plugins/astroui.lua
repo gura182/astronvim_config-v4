@@ -26,24 +26,30 @@ return {
         Normal = { bg = "#242424" },
         NeoTreeNormal = { bg = "#242424" },
       },
-      kanagawa = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#2F2E2C" },
-        -- NeoTreeNormal = { bg = "#2F2E2C" },
-      },
+      -- kanagawa = { -- a table of overrides/changes when applying the astrotheme theme
+      --   Normal = { bg = "#2F2E2C" },
+      --   NeoTreeNormal = { bg = "#2F2E2C" },
+      -- },
     },
     -- Icons can be configured throughout the interface
-    -- icons = {
-    --   -- configure the loading of the lsp in the status line
-    --   LSPLoading1 = "⠋",
-    --   LSPLoading2 = "⠙",
-    --   LSPLoading3 = "⠹",
-    --   LSPLoading4 = "⠸",
-    --   LSPLoading5 = "⠼",
-    --   LSPLoading6 = "⠴",
-    --   LSPLoading7 = "⠦",
-    --   LSPLoading8 = "⠧",
-    --   LSPLoading9 = "⠇",
-    --   LSPLoading10 = "⠏",
-    -- },
+    icons = {
+      -- configure the loading of the lsp in the status line
+      LSPLoading1 = "⠋",
+      LSPLoading2 = "⠙",
+      LSPLoading3 = "⠹",
+      LSPLoading4 = "⠸",
+      LSPLoading5 = "⠼",
+      LSPLoading6 = "⠴",
+      LSPLoading7 = "⠦",
+      LSPLoading8 = "⠧",
+      LSPLoading9 = "⠇",
+      LSPLoading10 = "⠏",
+    },
+    -- Tabline configuration
+    status = {
+      attributes = {
+        buffer_active = { bold = true, italic = false },
+      },
+    },
   },
 }
