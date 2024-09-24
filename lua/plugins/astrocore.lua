@@ -78,10 +78,6 @@ return {
         ["K"] = { "3k", desc = "Move up 3 lines" },
         -- join lines
         ["<C-N>"] = { "<cmd>join<cr>", desc = "Join lines" },
-        -- move lines up/down
-        ["<A-j>"] = { ":m .+1<CR>==", desc = "Move lines down" },
-        ["<A-k>"] = { ":m .-2<CR>==" , desc = "Move lines up" },
-        -- show white spaces
         -- ["<leader>u-"] = { "<cmd>IBLDisable<cr><cmd>set list!<cr>", desc = "Toggle show whitespaces" },
         ["<leader>u-"] = { "<cmd>set list!<cr>", desc = "Toggle show whitespaces" },
         -- append semicolon
@@ -93,9 +89,6 @@ return {
       v = {
         ["<C-s>"] = { "<esc><cmd>w<cr>", desc = "Save" },
         ["p"] = { "pgvy" },
-        -- TODO: move lines up/down
-        -- ["<A-j>"] = { ":m '>+1<CR>gv=gv", desc = "Move lines down" },
-        -- ["<A-k>"] = { ":m '<-2<CR>gv=gv" , desc = "Move lines up" },
       },
     },
   },

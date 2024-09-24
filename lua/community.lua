@@ -11,5 +11,6 @@ return {
   { import = "astrocommunity.pack.cpp" },
   -- { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+  { import = "astrocommunity.editing-support.vim-move" },
   -- import/override with your plugins folder
 }

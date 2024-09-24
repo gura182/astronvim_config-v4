@@ -97,7 +97,7 @@ return {
 
         -- disble keymap "K" and redefined on "I"
         ["K"] = false,
-        ["I"] = { function() vim.lsp.buf.hover() end, desc = "Hover symbol details", },
+        ["T"] = { function() vim.lsp.buf.hover() end, desc = "Hover symbol details", },
         ["<F2>"] = { function() vim.lsp.buf.definition() end, desc = "Show the definition" },
         -- switch source/header clang
         ["<F4>"] = { "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch to Source/Header" },
